@@ -25,7 +25,7 @@ const AddComment = (props) => {
 					className="form__name-input"
 					placeholder="Введите имя"
 					required={true}
-					onChange={ev => {newName = ev.target.value}}
+					onChange={ev => newName = ev.target.value}
 				>
 				</input>
 				<label
@@ -46,9 +46,12 @@ const AddComment = (props) => {
 					className={'form__btn'}
 					onClick={ev => {
             	ev.preventDefault();
+				if (newName == '' || newComment == '') return;
             	addComment(newName, newComment);
-            	newName = '';
-            	newComment = '';
+				document.querySelector('.form__comment-input').value = '';
+				document.querySelector('.form__name-input').value = '';
+				newComment = '';
+				newName = '';
           	}
           }
 				>

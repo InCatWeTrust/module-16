@@ -8,12 +8,8 @@ const comments = (state = [], action) => {
       ]
 
     case 'REMOVE_COMMENT':
-      return state.map(comment => {
-        if (comment.id === action.id) {
-          return state.splice(comment.id, 1);
-        };
-        return comment;
-      });
+      return state.filter((comment) => comment.id !== action.id)
+
     default:
       return state;
   };
