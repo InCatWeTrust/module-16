@@ -4,7 +4,7 @@ const comments = (state = [], action) => {
     case 'ADD_COMMENT':
       return [
         ...state,
-        { id: action.id, name: action.name, comment: action.comment, date: action.date }
+        { id: action.id, name: action.name, comment: action.comment, date: action.date },
       ]
 
     case 'REMOVE_COMMENT':

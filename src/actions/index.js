@@ -1,4 +1,4 @@
-let nextId = 1;
+import  { v4 } from 'uuid';
 const getDate = () => {
   const currentDate = new Date();
   const date = currentDate.getDate() + '.' + (currentDate.getMonth() + 1) + '.' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes() + ':' + currentDate.getSeconds();
@@ -10,7 +10,7 @@ const getDate = () => {
 export const addComment = (newName, newComment) => {
   return {
     type: 'ADD_COMMENT',
-    id: nextId++,
+    id: v4(),
     name: newName,
     comment: newComment,
     date: getDate()
